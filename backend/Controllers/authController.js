@@ -20,8 +20,7 @@ const getuser = async (req, res) => {
 const login = async (req, res) => {
   try {
     const { username, password } = req.body;
-    // const username="shekhar123"
-    // const password="hello"
+  
     const user = await User.findOne({ username: username });
     //   console.log(req.body)
     console.log(user);
@@ -43,8 +42,9 @@ const signup = async (req, res) => {
   try {
     const { fullName, username, password, confirmPassword, gender } = req.body;
     const gen = gender != "others" ? (gender == "male" ? "boy" : "girl") : "";
-    // https://avatar-placeholder.iran.liara.run/
-    const image = `https://avatar.iran.liara.run/public/${gen}?username=${username}`;
+    // https://avatar-placeholder.iran.liara.run/  source for link
+    const avatarAPI=process.env.AVATAR_API
+    const image = `${avatarAPI}/${gen}?username=${username}`;
     if (password !== confirmPassword) {
       throw new Error("passwords do not match");
     }
@@ -73,7 +73,14 @@ const signup = async (req, res) => {
     res.send("error:" + error);
   }
 };
-const logout = (req, res) => {
-  res.send("logout route");
+const logout = async (req, res) => {
+  try {
+    console.log("logged out")
+    res.cookie('jwt',"",{maxAge:0});
+    res.status(200).json({message:"logged out successfully"});
+  } catch (error) {
+    console.log("error in logging out user");
+    res.status(500).json({error:"internal server error"});
+  }
 };
 export { login, signup, logout,getuser };
