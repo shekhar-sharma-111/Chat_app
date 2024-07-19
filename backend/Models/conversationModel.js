@@ -22,5 +22,5 @@ const conversationSchema=new mongoose.Schema(
     },{timestamps:true} 
 )
 
-const convertation=mongoose.model('conversation',conversationSchema)
-export default convertation
+const Conversation=mongoose.model('conversation',conversationSchema)
+export default Conversation
