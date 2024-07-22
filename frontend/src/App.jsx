@@ -1,19 +1,20 @@
 
-// import './App.css'
+import './App.css'
+
+// import Login from "./Pages/Login/Login"
+import Signup from './Pages/Signup/Signup'
 
 function App() {
   return (
     <>
-      <div>
-      <button className="btn btn-active">Default</button>
-<button className="btn btn-active btn-neutral">Neutral</button>
-<button className="btn btn-active btn-primary">Primary</button>
-<button className="btn btn-active btn-secondary">Secondary</button>
-<button className="btn btn-active btn-accent">Accent</button>
-<button className="btn btn-active btn-ghost">Ghost</button>
-<button className="btn btn-active btn-link">Link</button>
-      </div>
-      
+   
+    
+    <div className="h-screen w-full bg-cover bg-center" style={{ backgroundImage: "url('/bg.jpeg')" }}>
+    <div className="p-4 h-screen flex items-center justify-center">
+    {/* <Login/> */}
+     <Signup/>
+    </div>
+    </div>
     </>
   )
 }
