@@ -1,8 +1,7 @@
 
 import './App.css'
+import Home from './Pages/Home/Home'
 
-// import Login from "./Pages/Login/Login"
-import Signup from './Pages/Signup/Signup'
 
 function App() {
   return (
@@ -11,8 +10,8 @@ function App() {
     
     <div className="h-screen w-full bg-cover bg-center" style={{ backgroundImage: "url('/bg.jpeg')" }}>
     <div className="p-4 h-screen flex items-center justify-center">
-    {/* <Login/> */}
-     <Signup/>
+   
+     <Home/>
     </div>
     </div>
     </>
