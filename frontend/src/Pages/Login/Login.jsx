@@ -31,7 +31,7 @@ function Login() {
               placeholder="Enter password"
               className="w-full input input-border h-10"
             />
-             <a href="#" className="text-white hover:underline hover:text-blue-600 mt-2 inline-block">
+             <a href="/signup" className="text-white hover:underline hover:text-blue-600 mt-2 inline-block">
             SignUp
           </a>
           </div>

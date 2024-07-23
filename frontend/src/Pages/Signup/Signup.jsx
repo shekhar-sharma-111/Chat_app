@@ -56,7 +56,7 @@ function Signup() {
         </div>
       <GenderCheckbox/>
 
-           <a href="#" className="text-white hover:underline hover:text-blue-600  inline-block">
+           <a href="/login" className="text-white hover:underline hover:text-blue-600  inline-block">
           Already have an account ?
         </a>
         
