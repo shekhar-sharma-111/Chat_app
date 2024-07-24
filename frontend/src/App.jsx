@@ -1,6 +1,7 @@
 
 import {RouterProvider } from 'react-router-dom'
 import './App.css'
+import { Toaster} from 'react-hot-toast'
 import router from './Components/Router/Router.jsx'
 function App() {
   return (
@@ -12,8 +13,7 @@ function App() {
   
    
     <RouterProvider router={router} />
-    {/* comminting b=git bash*/}
-   
+   <Toaster/>
     </div>
     </div>
     </>

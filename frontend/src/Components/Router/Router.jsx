@@ -16,7 +16,7 @@ import Signup from "../../Pages/Signup/Signup";
           element: <Layout />,
           children: [
             {
-              path: "/home",
+              path: "/",
               element: <Home />,
             },
             {
