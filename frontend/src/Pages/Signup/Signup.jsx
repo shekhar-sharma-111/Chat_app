@@ -1,4 +1,3 @@
-// import React from 'react'
 
 import { useState } from "react"
 import GenderCheckbox from "./GenderCheckbox"
@@ -13,6 +12,7 @@ const [inputs,setInputs]=useState({
   gender:'',
 })
 
+// eslint-disable-next-line no-unused-vars
 const {loading ,signup}=useSignup()
 const handleSubmit=async (e)=>{
   e.preventDefault()
