@@ -22,13 +22,13 @@ const login = async (req, res) => {
     const { username, password } = req.body;
   
     const user = await User.findOne({ username: username });
-    //   console.log(req.body)
-    console.log(user);
+      console.log(req.body)
+    user&&console.log(user);
     if (!user) return res.status(400).json({ message: "User not found" });
     const isMatch = await bcrypt.compare(password, user?.password || "");
     console.log(isMatch);
     if (!isMatch)
-      return res.status(400).json({ message: "Invalid credentials" });
+      return res.status(400).json({ status:400, message: "Invalid credentials" });
     generateToken(user._id, res);
     isMatch && res.json({ user });
   } catch (error) {

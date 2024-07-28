@@ -6,7 +6,7 @@ function GenderCheckbox({onGenderChange,selectedGender}) {
       <div className="flex ">
         <div className="form-control">
           <label className={`label gap-2 cursor-pointer ${selectedGender==='male'?"selected" : ""}`}>
-            <span className="label-text text-grey-50">Male</span>
+            <span className="label-text text-black">Male</span>
             <input 
             type="checkbox"
             checked={selectedGender==="male"}
@@ -19,7 +19,7 @@ function GenderCheckbox({onGenderChange,selectedGender}) {
         <label className={`label gap-2 cursor-pointer ${selectedGender==='female'?"selected" : ""}`}>
            
           {/* <label className="label gap-2 cursor-pointer"> */}
-            <span className="label-text text-grey-50 ">Female</span>
+            <span className="label-text text-black ">Female</span>
             <input type="checkbox"
               checked={selectedGender==="female"}
               onChange={()=>onGenderChange('female')}
@@ -32,7 +32,7 @@ function GenderCheckbox({onGenderChange,selectedGender}) {
         <label className={`label gap-2 cursor-pointer ${selectedGender==='others'?"selected" : ""}`}>
            
           {/* <label className="label gap-2 cursor-pointer"> */}
-            <span className="label-text text-grey-50">Others</span>
+            <span className="label-text text-black">Others</span>
             <input type="checkbox" 
               checked={selectedGender==="others"}
               onChange={()=>onGenderChange('others')}

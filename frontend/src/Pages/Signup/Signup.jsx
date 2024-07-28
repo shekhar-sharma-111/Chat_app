@@ -29,17 +29,17 @@ const handleCheckbox =(gender)=>{
   return (
     <div className="fles flex-col items-center justify-center min-w-96 mx-auto">
     <div className="w-full p-6 rounded-lg shadow-md bg-grey-300 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-0">
-      <h1 className="text-3xl font-semibold text-center text-blue-300">
-        <i>SignUp</i>
-        <span className="text-yellow-400 ">
+      <h1 className="text-3xl font-bold text-center text-blue-400">
+        SignUp
+        {/* <span className="text-yellow-400 ">
           {" "}
           <b>KNOCK KNOCK</b>
-        </span>
+        </span> */}
       </h1>
       <form onSubmit={handleSubmit} >
         <div>
           <label className="label p-2">
-            <span className="text-grey-200 text-base label-text">Full name</span>
+            <span className="text-black text-base label-text">Full name</span>
           </label>
           <input
             type="text"
@@ -51,7 +51,7 @@ const handleCheckbox =(gender)=>{
         </div>
         <div className="">
           <label className="label p-2">
-            <span className=" text-white text-base label-text">Username</span>
+            <span className=" text-black text-base label-text">Username</span>
           </label>
           <input
             type="text"
@@ -63,7 +63,7 @@ const handleCheckbox =(gender)=>{
         </div>
         <div className="">
           <label className="label p-2">
-            <span className=" text-white text-base label-text">Password</span>
+            <span className=" text-black text-base label-text">Password</span>
           </label>
           <input
             type="password"
@@ -75,7 +75,7 @@ const handleCheckbox =(gender)=>{
         </div>
         <div className="">
           <label className="label p-2">
-            <span className=" text-white text-base label-text">Confirm Password</span>
+            <span className=" text-black text-base label-text">Confirm Password</span>
           </label>
           <input
             type="password"
@@ -92,9 +92,9 @@ const handleCheckbox =(gender)=>{
         </a>
         
        <div><button className="btn btn-block btn-sm mt-2" disabled={loading}>
-        Signup
+       {loading?<span className="loading loading-spinner"></span>:"Sign Up"}
         </button>
-        {loading?<span className="loading loading-spinner"></span>:"Sign Up"}
+        
         </div>
 
       </form>
