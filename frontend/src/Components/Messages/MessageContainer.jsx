@@ -6,20 +6,18 @@ import { TiMessage } from 'react-icons/ti';
 
 function MessageContainer() {
   const noChatOpen = false;
+
   return (
     <div className="md:min-w-[450px] flex flex-col h-full">
-      {noChatOpen ? (
-        <NoChatSelected />
-      ) : (
-        <>
+     {noChatOpen&& <>
           <div className="bg-amber-400 px-4 py-2 mb-2">
             <span className="label-text">to:</span>
             <span className="text-white font-bold">user name</span>
           </div>
           <Messages />
           <MessageInput />
-        </>
-      )}
+        </>}
+     {!noChatOpen&& <NoChatSelected/>}
     </div>
   );
 }

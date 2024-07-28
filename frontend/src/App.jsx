@@ -23,3 +23,12 @@ function App() {
 }
 
 export default App
+
+// {
+//   fullName: 'skkkk',
+//   username: 'skkkk',
+//   password: 'sksksksk',
+//   confirmPassword: 'sksksksk',
+//   gender: 'male'
+// }
+// new ObjectId('66a3c02cd0bef611dae0666e')

@@ -8,7 +8,7 @@ function LogoutButton() {
     <div className="mt-auto">
       {!loading? (<CiLogout 
       onClick={logout}
-       className="h-6 text-white cursor-pointer hover:h-8 w-8" />):(<span className="loading loading-spinner"></span>)}
+       className="mt-4 text-white hover:text-amber-300 cursor-pointer w-6 h-6" />):(<span className="loading loading-spinner"></span>)}
     </div>
   );
 }
