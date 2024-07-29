@@ -28,16 +28,11 @@ function useLogin() {
       });
 
       clearTimeout(timeoutId);
-      // console.log(res.status)
-      if (!res.ok) {
-        // throw new Error(`Request failed with status ${res.status}`);
-        throw new Error(`username or password wrong , status: ${res.status}`);
-       
-      }
+     
 
       const data = await res.json();
       if (data.error) {
-        throw new Error(data.error.message);
+        throw new Error(data.error);
       }
 
       // Setting local storage
