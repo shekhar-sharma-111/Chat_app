@@ -1,7 +1,8 @@
 import jwt from 'jsonwebtoken';
 
 const verifyToken = (req, res, next) => {
-  const token = req.header('Authorization')?.split(' ')[1]; 
+  // const token = req.header('Authorization')?.split(' ')[1]; 
+  const token = req.cookies.jwt
 const secret =process.env.JWT_SECRET;
   if (!token) {
     console.log("wrong token")

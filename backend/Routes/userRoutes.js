@@ -1,5 +1,5 @@
 import express from "express"
-import protectRoutes from "../Middleware/protectRoute.js";
+import protectRoutes from "../Middleware/protectRoutes.js";
 import { getUserForSidebar } from "../Controllers/userController.js";
  const router=express.Router();
 

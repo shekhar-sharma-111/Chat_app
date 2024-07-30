@@ -41,11 +41,13 @@ export const  getMessage=async (req,res)=>{
         }).populate('messages')
        if(!conversation){
         // res.status(404).json({error:"conversation not found"})
-        res.status(200).json(['start new conversation']);
+        res.status(200).json([]);
+        // res.status(200);
+        return;
        }
-       const messages=conversation.messages
+      if(conversation){ const messages=conversation.messages
        res.status(200).json(messages)
-       console.log(messages)
+       console.log(messages)}
         
     } catch (error) {
         console.log('error in get message controller',error.message)

@@ -1,6 +1,6 @@
 import express from 'express'
 import { getMessage, sendMessage } from '../Controllers/messageController.js';
-import protectRoutes from '../Middleware/protectRoute.js';
+import protectRoutes from '../Middleware/protectRoutes.js';
 const router =express.Router();
 
 router.post('/send/:id',protectRoutes,sendMessage)

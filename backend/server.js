@@ -5,15 +5,18 @@ import express from "express";
 import dotenv from "dotenv";
 import connectDB from "./db/db.js";
 import cookieParser from "cookie-parser";
+import protectRoutes from "./Middleware/protectRoutes.js";
 dotenv.config();
 
 const app = express();
+app.use(cookieParser());
 const port = process.env.PORT || 5000;
 app.use(express.json());
+// app.use(protectRoutes)
 app.use("/", authRoutes);
 app.use('/api/messages',messageRoutes);
 app.use('/api/users',userRoutes);
-app.use(cookieParser());
+
 
 app.get("/", (req, res) => {
   
@@ -22,7 +25,7 @@ app.get("/", (req, res) => {
 });
 
 
-
+//   to test cookies  ignore 
 // // Set Cookie Endpoint
 // app.get("/set-cookie", (req, res) => {
 //   res.cookie("exampleCookie", "cookieValue", {
@@ -35,8 +38,8 @@ app.get("/", (req, res) => {
 
 // // Get Cookie Endpoint
 // app.get("/get-cookie", (req, res) => {
-//   // const exampleCookie = req.cookies.exampleCookie;
-//   // res.send(`Cookie Value: ${exampleCookie}`);
+//   const exampleCookie = req.cookies.jwt;
+//   res.send(`Cookie Value: ${exampleCookie}`);
 //   console.log(req.cookies.jwt);
 // });
 
