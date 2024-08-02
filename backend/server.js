@@ -5,14 +5,13 @@ import express from "express";
 import dotenv from "dotenv";
 import connectDB from "./db/db.js";
 import cookieParser from "cookie-parser";
-import protectRoutes from "./Middleware/protectRoutes.js";
+import { app,server } from "./socket/socket.js";
 dotenv.config();
 
-const app = express();
+// const app = express();
 app.use(cookieParser());
 const port = process.env.PORT || 5000;
 app.use(express.json());
-// app.use(protectRoutes)
 app.use("/", authRoutes);
 app.use('/api/messages',messageRoutes);
 app.use('/api/users',userRoutes);
@@ -43,7 +42,7 @@ app.get("/", (req, res) => {
 //   console.log(req.cookies.jwt);
 // });
 
-app.listen(port, () => {
+server.listen(port, () => {
   connectDB();
   console.log(`server running on port :${port}`);
 });

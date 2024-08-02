@@ -1,12 +1,15 @@
 // import React from 'react'
 
-import { lazy } from "react";
 import useConversation from "../../zustand/useConversation";
+import { useSocketContext } from "../../Context/SocketContext";
 
 // eslint-disable-next-line react/prop-types
 function Conversation({ conversation, lastIndex, emoji }) {
   const { selectedConversation, setSelectedConversation } = useConversation();
   const isSelected = selectedConversation?._id === conversation._id;
+  const {onlineUsers}=useSocketContext()
+  // eslint-disable-next-line react/prop-types
+  const isOnline =onlineUsers.length>0&& onlineUsers.includes(conversation._id)
   return (
     <>
       <div
@@ -15,12 +18,12 @@ function Conversation({ conversation, lastIndex, emoji }) {
         }`}
         onClick={() => setSelectedConversation(conversation)}
       >
-        <div className="avatar online">
+        <div className={`avatar ${isOnline?"online":""}`}>
           <div className="w-14 rounded-full">
             <img
+              // eslint-disable-next-line react/prop-types
               src={conversation.profilePic}
               alt="user avatar"
-              loading={lazy}
             />
           </div>
         </div>

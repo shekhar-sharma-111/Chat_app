@@ -5,8 +5,7 @@ import useConversation from "../../zustand/useConversation";
 
 function Message({message}) {
   const {authUser}=useAuthContext();
-  const userData=JSON.parse(authUser)
-  const{user}=userData
+  
   //
   const time=(message)=>{
     // eslint-disable-next-line react/prop-types
@@ -21,10 +20,10 @@ function Message({message}) {
   }
  
  const{selectedConversation}= useConversation();
- const fromMe = message.senderId===user._id;
+ const fromMe = message.senderId===authUser._id;
 // const fromMe=false;
  const chatClassName=fromMe?'chat-end':'chat-start';
- const profilePic=fromMe?user.profilePic:selectedConversation.profilePic;
+ const profilePic=fromMe?authUser.profilePic:selectedConversation.profilePic;
  const bubbleBgcolor=fromMe?'bg-amber-300':"";
   return (
     <div className={`chat ${chatClassName}`} >
