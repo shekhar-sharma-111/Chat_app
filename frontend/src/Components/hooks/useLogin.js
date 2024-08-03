@@ -5,13 +5,13 @@ import { useAuthContext } from "../../Context/AuthContext.jsx";
 
 function useLogin() {
   const [loading, setLoading] = useState(false);
-  const { setAuthUser } = useAuthContext();
+  const {authUser, setAuthUser } = useAuthContext();
 
   const login = async (username, password) => {
     setLoading(true);
     if (!username || !password) {
       toast.error("all field  are required.");
-      setLoading(false);
+       setLoading(false);
       return;
     }
     const controller = new AbortController();
@@ -36,11 +36,12 @@ function useLogin() {
       }
 
       // Setting local storage
+      setAuthUser(data)
       localStorage.setItem("chat-user", JSON.stringify(data));
-      setAuthUser(data);
+
       if (data.success) {
         toast.success("Login successful");
-        console.log(data);
+       
       }
     } catch (error) {
       if (error.name === 'AbortError') {

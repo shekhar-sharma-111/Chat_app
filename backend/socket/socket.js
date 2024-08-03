@@ -16,10 +16,9 @@ export const getReceiverSocketId =(receiverId)=>{
 }
 const userSocketMap={};
 
-io.on('connection',(socket)=>{
+io.on('connection', (socket)=>{
     console.log('a new client connected',socket.id)
-
-    const userId=socket.handshake.query.userId;
+    const userId=  socket.handshake.query.userId;
     console.log(userId)
     userId&&(userSocketMap[userId]=socket.id);
     io.emit("getOnlineUsers",Object.keys(userSocketMap))

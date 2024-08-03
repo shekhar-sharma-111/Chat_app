@@ -3,9 +3,11 @@ import { User } from "../Models/UserModel.js"
 export const getUserForSidebar=async(req,res)=>{
     try {
         const loggedinId=req.user._id
+        // const loggedinId="66ab73e9b6aa14f1abc3da5f"
       const allUsers=await User.find({
         _id:{$ne:loggedinId} // if we dont  want ourselves to appear for messaging
       })
+      // console.log()
     //   const allUsers=await User.find({
     //    // if we wants ourselves to appear for messaging
     //   })
