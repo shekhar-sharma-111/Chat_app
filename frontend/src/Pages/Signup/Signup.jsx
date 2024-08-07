@@ -16,7 +16,7 @@ const [inputs,setInputs]=useState({
 const {loading ,signup}=useSignup()
 const handleSubmit=async (e)=>{
   e.preventDefault()
-  console.log(inputs)
+  // console.log(inputs)
   // setTimeout(alert(JSON.stringify( inputs)),500)
   await signup(inputs);
 

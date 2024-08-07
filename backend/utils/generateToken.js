@@ -9,10 +9,7 @@ const generateToken=(userId,res)=>{
        httpOnly:true,
        secure: process.env.NODE_ENV!=='development',
        sameSite:'strict' 
-    // httpOnly: true,
-    // secure: false, // Use false in development for testing with HTTP
-    // maxAge: 24 * 60 * 60 * 1000, // 1 day
-    // sameSite:'strict'
+    
     })
 }
 export default generateToken;

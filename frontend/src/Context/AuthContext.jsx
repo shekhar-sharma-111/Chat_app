@@ -9,10 +9,12 @@ export const useAuthContext = () => {
 };
 
 // eslint-disable-next-line react/prop-types
-export const AuthContextProvider = ({ children }) => {
-  const data= JSON.parse(localStorage.getItem("chat-user"))
-  const [authUser, setAuthUser] = useState(data?data.user:""
+export const AuthContextProvider =async ({ children }) => {
+  const userdata=JSON.parse(localStorage.getItem("chat-user"))
+  const [authUser, setAuthUser] = useState(
+     userdata?.user || null
   );
+
   return (
     <AuthContext.Provider value={{ authUser, setAuthUser }}>
       {children}
