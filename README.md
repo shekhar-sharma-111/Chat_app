@@ -1,4 +1,6 @@
+
 CHAT APPLICATION USING MERN STACK and TAILWIND CSS
+deployment: https://chat-app-ckgr.onrender.com/
 ------------------------------------------------------------------------------
 ------------------------------------------------------------------------------
 libraries: React router dom , Daisy UI , jwttoken , Bcrypt , Socket.io , React Icons , Tailwind UI , etc.
