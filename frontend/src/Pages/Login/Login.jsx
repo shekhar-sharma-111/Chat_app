@@ -16,10 +16,7 @@ function Login() {
       <div className="w-full p-6 rounded-lg shadow-md bg-grey-300 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-0">
         <h1 className="text-3xl  text-center text-blue-400 font-bold">
           Login
-          {/* <span className="text-yellow-400 ">
-            {" "}
-            <b>KNOCK KNOCK</b>
-          </span> */}
+          
         </h1>
         <form onSubmit={handleSubmit}>
           <div>

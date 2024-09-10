@@ -20,6 +20,7 @@ const useLogout =()=>{
                 setAuthUser(null)
                 toast.success(data.message)
                 localStorage.removeItem('chat-user')
+                sessionStorage.removeItem('hasLoadedHomePage')
               
         } catch (error) {
             console.log(error)

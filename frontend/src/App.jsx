@@ -4,6 +4,8 @@ import './App.css'
 import { Toaster} from 'react-hot-toast'
 import router from './Components/Router/Router.jsx'
 function App() {
+
+
   return (
     <>
    
@@ -24,11 +26,3 @@ function App() {
 
 export default App
 
-// {
-//   fullName: 'skkkk',
-//   username: 'skkkk',
-//   password: 'sksksksk',
-//   confirmPassword: 'sksksksk',
-//   gender: 'male'
-// }
-// new ObjectId('66a3c02cd0bef611dae0666e')
